@@ -80,7 +80,7 @@ func inputData() (string, float64, string){
 		
 		fmt.Scan(&outputAsset)
 		
-		if outputAsset == "0" || inputAsset == ""{
+		if outputAsset == "0" || outputAsset == ""{
 			panic("stop")
 		}
 		
