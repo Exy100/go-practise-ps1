@@ -74,7 +74,6 @@ func inputData() (string, float64, string){
 	}
 	
 	currencies = removeByValue(currencies, inputAsset)
-	
 	fmt.Printf("Введите НАЗВАНИЕ валюты, которую хотите получить (%s): \n", strings.Join(currencies, ", "))
 	
 	for{
