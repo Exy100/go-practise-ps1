@@ -74,14 +74,13 @@ func inputData() (string, float64, string){
 	}
 	
 	currencies = removeByValue(currencies, inputAsset)
-	
 	fmt.Printf("Введите НАЗВАНИЕ валюты, которую хотите получить (%s): \n", strings.Join(currencies, ", "))
 	
 	for{
 		
 		fmt.Scan(&outputAsset)
 		
-		if outputAsset == "0" || inputAsset == ""{
+		if outputAsset == "0" || outputAsset == ""{
 			panic("stop")
 		}
 		
