@@ -1,5 +1,3 @@
-
-
 package main
 
 import (
@@ -63,7 +61,7 @@ func inputData() (string, float64, string){
 	for{
 		fmt.Scan(&assetAmount)
 		
-		if assetAmount == 0 {
+		if assetAmount <= 0 {
 			panic("stop")
 		}
 			
