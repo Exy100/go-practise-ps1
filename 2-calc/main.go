@@ -5,22 +5,35 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"slices"
 )
 
 func main() {
 	r, err := calc()
 	if err != nil{
-		fmt.Println(r)
-	}else{
 		fmt.Println(err)
+	}else{
+		fmt.Println(r)	
 	}
 	
 }
 
 func calc() (float64, error) {
-	fmt.Println("Выберите тип операции(укажите только название)и 1) AVG, 2) SUM 3), MED")
+	fmt.Println("Выберите тип операции(укажите только название): 1) AVG, 2) SUM, 3) MED")
 	choice := ""
-	fmt.Scan(&choice)
+	
+	for{
+		fmt.Scan(&choice)
+		strings.ToUpper(choice)
+		
+		if slices.Contains([]string{"AVG", "SUM", "MED", "STOP"}, choice){
+			break
+		}else{
+			fmt.Println("нет такого вариант - попробуйте снова")
+		}
+
+	}
+	
 
 	fmt.Println("Теперь укажите через запятую и пробел числа:")
 	input_numbers_str := ""
