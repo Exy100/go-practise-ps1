@@ -107,26 +107,33 @@ func exchangeMoney(){
 		var amountInUSD float64
 		var result float64
 
+		amountInUSDMap := map[string]float64{"USD": amount, "EUR": amount / usd_eur, "RUB": amount / usd_rub}
 		
-		switch inAsset {
-		case "USD":
-			amountInUSD = amount
-		case "EUR":
-			amountInUSD = amount / usd_eur
-		case "RUB":
-			amountInUSD = amount / usd_rub
-		}
+		amountInUSD = amountInUSDMap[inAsset]
+		
+		// switch inAsset {
+		// case "USD":
+		// 	amountInUSD = amount
+		// case "EUR":
+		// 	amountInUSD = amount / usd_eur
+		// case "RUB":
+		// 	amountInUSD = amount / usd_rub
+		// }
 
 		
-		switch outAsset {
-		case "USD":
-			result = amountInUSD
-		case "EUR":
-			result = amountInUSD * usd_eur
-		case "RUB":
-			result = amountInUSD * usd_rub
-		}
+		// switch outAsset {
+		// case "USD":
+		// 	result = amountInUSD
+		// case "EUR":
+		// 	result = amountInUSD * usd_eur
+		// case "RUB":
+		// 	result = amountInUSD * usd_rub
+		// }
 
+		exchangeIndexMap := map[string]float64{"USD": amountInUSD, "EUR": amountInUSD * usd_eur, "RUB": amountInUSD * usd_rub}
+		
+		result = exchangeIndexMap[outAsset]
+		
 		fmt.Printf("Результат обмена: %.2f %s\n", result, outAsset)
 	
 }
