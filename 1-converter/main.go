@@ -129,6 +129,7 @@ func exchangeMoney(){
 		// case "RUB":
 		// 	result = amountInUSD * usd_rub
 		// }
+		// 
 
 		exchangeIndexMap := map[string]float64{"USD": amountInUSD, "EUR": amountInUSD * usd_eur, "RUB": amountInUSD * usd_rub}
 		
