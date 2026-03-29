@@ -29,7 +29,7 @@ func calc() (float64, error) {
 		if slices.Contains([]string{"AVG", "SUM", "MED", "STOP"}, choice){
 			break
 		}else{
-			fmt.Println("нет такого вариант - попробуйте снова")
+			fmt.Println("НЕТ такого вариант - попробуйте снова")
 		}
 
 	}
